@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fiche mémo — Champ d&#x27;application et information précontractuelle</title><style>
+:root{--prune:#8C1E70;--prune-fonce:#5E1349;--prune-clair:#F4E6EE;--accent:#C77BAA;
+ --vert:#283C28;--gris:#3C3C3C;--gris-moyen:#8A7A85;--filet:#E8DCE5;--creme:#FAF6F8;
+ --ok:#2F7A4F;--ko:#B23B3B;--amb:#B5852A;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--creme);color:var(--gris);
+ font-family:"Nunito","Segoe UI",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.62}
+.wrap{max-width:900px;margin:0 auto;padding:0 18px 60px}
+header.bandeau{background:var(--prune-fonce);color:#fff;padding:18px 0;border-bottom:4px solid var(--accent)}
+header.bandeau .wrap{padding-bottom:0}
+.chapitre{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#EAD3E3}
+.chapitre span{color:var(--accent);margin:0 6px}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:27px;line-height:1.25;margin:8px 0 4px;color:#fff}
+.sous{color:#EAD3E3;font-size:14.5px;margin:0}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:20px;color:var(--prune-fonce);
+ margin:34px 0 0;padding-bottom:8px;border-bottom:2px solid var(--filet)}
+h2 .num{color:var(--accent);margin-right:8px}
+h3{font-size:15px;color:var(--vert);margin:20px 0 8px;letter-spacing:.02em}
+.carte{background:#fff;border:1px solid var(--filet);border-radius:10px;padding:20px 22px;margin:18px 0;
+ box-shadow:0 1px 2px rgba(94,19,73,.05)}
+.enc{background:var(--prune-clair);border-left:5px solid var(--prune);padding:14px 18px;
+ border-radius:0 8px 8px 0;margin:18px 0;font-size:15.2px}
+.enc .t{display:block;font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;
+ font-weight:800;color:var(--prune-fonce);margin-bottom:6px}
+.enc.al{background:#FBF4F4;border-left-color:var(--ko)}.enc.al .t{color:var(--ko)}
+.enc.ci{background:#FCF8F0;border-left-color:var(--amb)}.enc.ci .t{color:#8A6418}
+.situ{background:#FCF9FB;border:1px dashed var(--filet);border-radius:8px;padding:16px 18px;margin:16px 0;font-size:15.2px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.duo>div{background:#fff;border:1px solid var(--filet);border-radius:9px;padding:15px 17px;font-size:14.8px}
+.duo .h{font-weight:800;color:var(--prune-fonce);margin-bottom:7px;font-size:14.5px}
+.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.tri>div{background:#fff;border:1px solid var(--filet);border-radius:9px;padding:14px 15px;font-size:14.3px}
+.quad{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+.quad>div{background:#fff;border:1px solid var(--filet);border-radius:9px;padding:12px 13px;font-size:13.6px}
+.quad .h{font-weight:800;color:var(--prune-fonce);margin-bottom:6px;font-size:13px;
+ text-transform:uppercase;letter-spacing:.04em}
+.tri .h{font-weight:800;color:var(--prune-fonce);margin-bottom:6px;font-size:13.5px;
+ text-transform:uppercase;letter-spacing:.05em}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.8px;background:#fff}
+th,td{border:1px solid var(--filet);padding:9px 12px;text-align:left}
+thead th{background:var(--prune-clair);color:var(--prune-fonce);font-size:13.5px}
+tbody th{font-weight:600;color:var(--gris)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.tot td,tr.tot th{background:#FBF3F8;font-weight:800;color:var(--prune-fonce)}
+.dl{display:inline-flex;align-items:center;gap:9px;background:var(--prune);color:#fff;text-decoration:none;
+ padding:11px 20px;border-radius:8px;font-weight:700;font-size:15px;margin:20px 0 4px}
+.dl:hover{background:var(--prune-fonce)}
+ol.q{padding-left:0;list-style:none;counter-reset:q}
+ol.q>li{margin:16px 0;padding-left:38px;position:relative}
+ol.q>li::before{counter-increment:q;content:counter(q);position:absolute;left:0;top:1px;
+ width:26px;height:26px;border-radius:50%;background:var(--prune-clair);color:var(--prune-fonce);
+ font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+b,strong{color:var(--vert)}
+footer{text-align:center;font-size:12.5px;color:var(--gris-moyen);padding:26px 18px 12px;
+ border-top:1px solid var(--filet);margin-top:44px}
+@media(max-width:860px){.quad{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.duo,.tri,.quad{grid-template-columns:1fr}h1{font-size:22px}}
+@media print{body{background:#fff}.dl{display:none}header.bandeau{background:#5E1349 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+td{vertical-align:top}td:first-child{white-space:nowrap}.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}.tri>div{background:#fff;border:1px solid var(--filet);border-radius:9px;padding:14px 15px;font-size:14.3px}.tri .h,.duo .h{font-weight:800;color:var(--prune-fonce);margin-bottom:6px;font-size:13.5px;text-transform:uppercase;letter-spacing:.05em}.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}.duo>div{background:#fff;border:1px solid var(--filet);border-radius:9px;padding:15px 17px;font-size:14.8px}@media(max-width:640px){.tri,.duo{grid-template-columns:1fr}}.enc,tr,.tri,.duo{break-inside:avoid}
+.enc p,.cols p{margin:6px 0}.enc.ok{background:#F1F7F3;border-left-color:var(--ok)}.enc.ok .t{color:var(--ok)}
+.cols{display:grid;gap:14px;margin:16px 0}.cols.c2{grid-template-columns:1fr 1fr}.cols.c3{grid-template-columns:repeat(3,1fr)}.cols.c4{grid-template-columns:repeat(4,1fr)}.cols.c5,.cols.c6{grid-template-columns:repeat(3,1fr)}
+.cols>div>.enc{margin:0;height:100%}.cols table{margin:0}
+p.src{font-size:12.5px;color:var(--gris-moyen);line-height:1.5}
+td,th{vertical-align:top}
+@media(max-width:760px){.cols.c2,.cols.c3,.cols.c4,.cols.c5,.cols.c6{grid-template-columns:1fr}}
+table.frise{table-layout:fixed;font-size:13px}.enc h3{margin:2px 0 8px;font-family:Georgia,serif;color:var(--prune-fonce);font-size:16px}
+.cols>div>.enc{margin:0}
+</style></head><body>
+<header class="bandeau"><div class="wrap"><div class="chapitre">IOBSP NIVEAU 2 · BLOC 2 · JOURNÉE 3 — MODULE 1</div><h1>Le champ d&#x27;application et l&#x27;information précontractuelle</h1><p class="sous">Fiche mémo — les six thèmes du module · régime applicable à compter du 20 novembre 2026</p></div></header>
+<main class="wrap"><a class="dl" href="J3_M1_Fiche_memo.pdf" download>⬇ Télécharger la fiche mémo (PDF)</a>
+<table><tbody><tr><td></td><td><b>1 · Le périmètre du crédit à la consommation</b></td></tr></tbody></table>
+<table><thead><tr><th><b>Critère</b></th><th><b>Jusqu&#x27;au 19 novembre 2026</b></th><th><b>À compter du 20 novembre 2026</b></th></tr></thead><tbody><tr><td><b>Montant total</b></td><td>de 200 € à 75 000 €</td><td><b>dès le premier euro, jusqu&#x27;à 100 000 €</b></td></tr><tr><td><b>Durée</b></td><td>plus de trois mois</td><td>critère abandonné pour les crédits à frais négligeables</td></tr><tr><td><b>Paiement fractionné / différé</b></td><td>hors du régime</td><td><b>dans le régime</b></td></tr><tr><td><b>Crédit gratuit ou à frais</b> <b>négligeables</b></td><td>hors du régime</td><td>dans le régime dès qu&#x27;il crée une charge de remboursement</td></tr><tr><td><b>Location avec option d&#x27;achat</b></td><td>régime partiel</td><td>dans le régime</td></tr></tbody></table>
+<div class="cols c2"><div><div class="enc"><h3>Dans le champ</h3><p>• Prêt personnel, crédit affecté, crédit renouvelable</p><p>• Location avec option d&#x27;achat</p><p>• Mini-crédits, quel qu&#x27;en soit le montant</p><p>• Paiement en plusieurs fois et paiement différé</p><p>• Découvert en compte</p></div></div><div><div class="enc"><h3>Hors du champ</h3><p>• Crédit immobilier (régime propre)</p><p>• Crédit d&#x27;un montant total supérieur à 100 000 € (sauf travaux non garantis et regroupement de crédits)</p><p>• Location simple, sans option d&#x27;achat</p><p>• Crédit professionnel: emprunteur non consommateur</p><p>• Opérations exclues par l&#x27;article L. 312-4</p></div></div></div>
+<div class="enc"><span class="t">LE RÉFLEXE DE QUALIFICATION</span><p>Le consommateur est la personne physique agissant hors de son activité professionnelle: <b>c&#x27;est la finalité de l&#x27;opération qui qualifie, pas</b> <b>le statut de la personne</b>. Et la qualification se déduit du texte, jamais de la ressemblance: vérifier les exclusions avant de conclure.</p></div>
+<table><tbody><tr><td></td><td><b>2 · La publicité</b></td></tr></tbody></table>
+<p>Toute publicité portant sur une opération de crédit à la consommation, <b>quel qu&#x27;en soit le support</b>, est claire, loyale et non trompeuse. Elle contient la mention: <i>« Attention ! Un crédit coûte de l&#x27;argent et doit être remboursé»</i>. La mention doit être précise, visible et, le cas échéant, audible — la publicité sonore et vidéo n&#x27;échappe plus à l&#x27;obligation.</p>
+<p>Dès qu&#x27;un taux ou un chiffre relatif au coût apparaît, les informations chiffrées obligatoires sont présentées au moyen d&#x27;un <b>exemple</b> <b>représentatif</b>: un exemple auquel une part significative des clients peut réellement prétendre.</p>
+<div class="enc"><span class="t">FORMULATIONS À CONTRÔLER SYSTÉMATIQUEMENT</span><p>« Sans justificatif» · « Réponse garantie» · « Argent disponible immédiatement» · toute formule laissant croire que le crédit améliore la situation financière, qu&#x27;il constitue une ressource, ou qu&#x27;il est accordé sans examen. <i>art. L. 312-5 et L. 312-6 C. consom.</i></p></div>
+<table><tbody><tr><td></td><td><b>3 · L&#x27;information précontractuelle</b></td></tr></tbody></table>
+<p>Elle repose sur la <b>FIPEN</b>, fiche d&#x27;information précontractuelle européenne normalisée: contenu et ordre des rubriques imposés, pour permettre la comparaison ligne à ligne de deux offres concurrentes. Elle mentionne notamment l&#x27;identité du prêteur et de l&#x27;intermédiaire, le type de crédit, le montant total, la durée, le taux débiteur, le TAEG, le montant total dû, le coût des services accessoires, le droit de rétractation et les conséquences d&#x27;un défaut de paiement.</p>
+<table><thead><tr><th><b>Exigence</b></th><th><b>Contenu</b></th></tr></thead><tbody><tr><td><b>Moment</b></td><td>en temps utile avant que l&#x27;emprunteur ne soit lié — ni au moment de signer, ni sur le pas de la porte</td></tr><tr><td><b>Support</b></td><td>support durable <b>choisi par l&#x27;emprunteur</b></td></tr><tr><td><b>Rappel de rétractation</b></td><td>si l&#x27;information est fournie <b>moins d&#x27;un jour</b> avant l&#x27;engagement: rappel du droit de rétractation et de sa procédure, adressé <b>entre un et sept jours après la conclusion</b> du contrat</td></tr><tr><td><b>Traitement automatisé</b></td><td>l&#x27;emprunteur doit être informé lorsque l&#x27;offre ou l&#x27;évaluation de solvabilité repose sur un traitement automatisé de ses données</td></tr></tbody></table>
+<div class="enc ci"><p><b>LA SANCTION DU DÉFAUT D&#x27;INFORMATION</b></p><p>À défaut de remise de l&#x27;offre et des informations, le délai de rétractation expire <b>douze mois et quatorze jours</b> après la conclusion du contrat. Et si l&#x27;emprunteur n&#x27;a jamais été informé de son droit de rétractation, <b>le délai n&#x27;expire pas</b>. <i>art. L. 312-19 III C. consom.</i></p></div>
+<table><tbody><tr><td></td><td><b>4 · Trois obligations à ne pas confondre</b></td></tr></tbody></table>
+<table><thead><tr><th><b>Obligation</b></th><th><b>Obligatoire ?</b></th><th><b>En quoi consiste-t-elle</b></th></tr></thead><tbody><tr><td><b>Explications adéquates</b></td><td><b>Oui</b>, et gratuites</td><td>Permettre à l&#x27;emprunteur de déterminer si le crédit et les services accessoires sont adaptés à ses besoins et à sa situation: caractéristiques essentielles, conséquences financières y compris en cas de défaut, résiliation des services accessoires</td></tr><tr><td><b>Mise en garde</b></td><td><b>Oui</b>, si risque</td><td>Alerter l&#x27;emprunteur lorsque l&#x27;opération présente un risque au regard de sa situation. L&#x27;alerte doit être tracée</td></tr><tr><td><b>Service de conseil</b></td><td><b>Non</b>, mais réglementé</td><td>Recommandation personnalisée écrite, fondée sur un nombre suffisant de contrats. Facultatif — mais dès qu&#x27;il est fourni ou annoncé, tout le régime s&#x27;applique <i>art. L. 312-15-1</i> <i>et s.</i></td></tr></tbody></table>
+<table><tbody><tr><td></td><td><b>5 · La cohabitation des deux régimes</b></td></tr></tbody></table>
+<p>La réforme ne remplace pas l&#x27;ancien droit du jour au lendemain: elle s&#x27;y superpose. Les contrats de crédit <b>en cours au 20 novembre 2026</b> <b>restent régis par les dispositions antérieures, jusqu&#x27;à leur terme</b>. Un crédit renouvelable ouvert en septembre 2026 vivra donc plusieurs années sous l&#x27;ancien régime, pendant que le crédit souscrit en décembre par le même client relèvera du nouveau.</p>
+<table><thead><tr><th><b>Date de conclusion du contrat</b></th><th><b>Régime applicable</b></th></tr></thead><tbody><tr><td><b>Jusqu&#x27;au 19 novembre 2026</b></td><td>Droit antérieur, <b>jusqu&#x27;au terme du contrat</b> — y compris pour un crédit renouvelable reconduit après la bascule</td></tr><tr><td><b>À compter du 20 novembre 2026</b></td><td>Régime issu de l&#x27;ordonnance n° 2025-880</td></tr></tbody></table>
+<div class="enc"><span class="t">LE RÉFLEXE À ACQUÉRIR</span><p>En pratique: <b>repérer la date de conclusion avant de répondre</b> à toute question sur un contrat en cours. À l&#x27;examen: dès qu&#x27;un énoncé porte une date, cette date est là pour être utilisée — elle vous dit quel régime appliquer. <b>Un énoncé daté n&#x27;est jamais daté par hasard.</b></p><p><i>art. 99 de l&#x27;ord. n° 2025-880 du 3 septembre 2025</i></p></div>
+<div class="enc ok"><p><b>CE QUI TOMBE À L&#x27;EXAMEN</b></p><p>• Le périmètre daté: 200 € / 75 000 € / plus de trois mois hier, du premier euro à 100 000 € demain.</p><p>• Le paiement fractionné entre dans le crédit à la consommation le 20 novembre 2026.</p><p>• La mention légale de publicité, restituée au mot près, valable sur tout support.</p><p>• La fenêtre J+1 à J+7 du rappel de rétractation.</p><p>• Explications (obligatoires) / mise en garde (si risque) / conseil (facultatif mais réglementé).</p><p>• La date de conclusion commande le régime: contrats en cours = droit antérieur jusqu&#x27;à leur terme.</p></div>
+<p><i>Sources: code de la consommation, art. L. 312-1 et s., L. 312-4, L. 312-5, L. 312-6, L. 312-12 et s., L. 312-15-1 et s., L. 312-19, L. 314-6 · directive (UE) 2023/2225 du 18</i> <i>octobre 2023 · ordonnance n° 2025-880 du 3 septembre 2025 (entrée en vigueur le 20 novembre 2026; les contrats en cours restent régis par le droit antérieur) ·</i> <i>ordonnance n° 2025-1154 du 2 décembre 2025 · arrêté du 18 juillet 2022, annexe A, point B.1.</i></p>
+</main>
+<footer>TMK Performances - N° Siret : 49841924100027 - Code NAF : 8559A</footer>
+</body></html>
